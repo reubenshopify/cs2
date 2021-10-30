@@ -7,6 +7,8 @@ int main() {
     int letterCount = 0, vowelCount = 0, longestWord = 0, mostVowels = 0, wordCount = 0;
     int vowelCheck(char i);
     
+    cout << "Enter some text and press 'return' when finished: \n";
+
     do {
         input = cin.get();
         
@@ -20,22 +22,23 @@ int main() {
                 input = cin.get();
             }
         
-        longestWord = max(letterCount, longestWord);
-        mostVowels = max(vowelCount, mostVowels);
+            longestWord = max(letterCount, longestWord);
+            mostVowels = max(vowelCount, mostVowels);
         
-        if (letterCount) wordCount++;
-        
-        letterCount = 0;
-        vowelCount = 0;
-        
-        if (input == 10) break;
-        
-        input = cin.get();
-        
-        }
-        
-    } while ((input != 10));
+            if (letterCount) wordCount++;
+            
+            letterCount = 0;
+            vowelCount = 0;
+            
+            if (input == 10) {
+                break;
+            } else {
+                input = cin.get();
+            }
+        } 
+    } while (input != 10);
     
+    cout << "\n"
     cout << "Longest Word " << longestWord << "\n";
     cout << "Total number of Words " << wordCount << "\n";
     cout << "Most vowels in a word " << mostVowels << "\n";
